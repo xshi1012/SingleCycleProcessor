@@ -296,6 +296,8 @@ void program1() {
         char shiwu = 7;             // mov r0, 7
         shiwu = shiwu << 1;         // lsl r0, 1
         shiwu += 1;                 // add r0, 1
-        // bne r7, loop
+
+        // bne r7, r0
+        // jump loop
     }
 }
