@@ -1,0 +1,169 @@
+//program 1
+MOV R3, 1 // R3 = 1
+SLL R3, 1 //R3 = 10
+INC R3 // R3 = 11
+SLL R3, 1 //R3 = 110
+INC R3 // R3 = 111
+SLL R3, 1 //R3 = 1110
+INC R3 // R3 = 1111
+SLL R3, 1 //R3 = 11110 = 30
+MOV R4, 0 //R4 = 0
+ADD R4, R3 //R4 = R4 + R3 = 0 + 11110 = 30
+MOV R5, 0 // R5 = 0
+LOOP1_1:
+LD R1, R5 // R1= Mem[R5(0)] =  b8 b7 b6 b5 b4 b3   b2   b1 
+MOV R6, 1 // R6 = 1
+ADD R6, R5 // R6 = R5 + 1
+LD R0, R6  //R0= Mem[R6(1)] =  0   0   0   0   0   b11 b10 b9  
+SLL R0, 1 //R1 = 0 0 0 0 b11 b10 b9 0
+SLL R0, 1 //R1 = 0 0 0 b11 b10 b9 0 0
+SLL R0, 1 //R1 = 0 0 b11 b10 b9 0 0 0
+SLL R0, 1 //R1 = 0 b11 b10 b9 0 0 0 0
+SRL R1, 1 //R1 = 0 b8 b7 b6 b5 b4 b3 b2
+SRL R1, 1 //R1 = 0 0 b8 b7 b6 b5 b4 b3
+SRL R1, 1 //R1 = 0 0  0 b8 b7 b6 b5 b4
+SRL R1, 1 //R1 = 0 0  0  0 b8 b7 b6 b5
+XOR R1, R0 // R1 = R1 ^ R0 =   0 b11 b10 b9 b8 b7 b6 b5
+MOV R7, 1 // R7 = 1
+ADD R7, R3 // R7 = R3 + 1 = 31
+SW R1, R7 // Mem[R6(31)] = R1 = 0 b11 b10 b9 b8 b7 b6 b5
+// calculate p8 = ^ b11:b5
+MOV R2, 1  // R2 = 1
+MOV R6, 0  // R6 = 0
+AND R2, R1 // R2 = b5
+SRL R1, 1 // R1 = 0 0 b11 b10 b9 b8 b7 b6
+MOV R7, 1 //R7 = 1
+AND R7, R1 // R7 = b6
+XOR R2, R7 // R2 = b5 ^ b6
+SRL R1, 1 // R1 = 0 0 0 b11 b10 b9 b8 b7
+MOV R7, 1 //R7 = 1
+AND R7, R1 // R7 = b7
+XOR R2, R7 //R2 = b5 ^ b6 ^ b7
+SRL R1, 1 // R1 = 0 0 0 0 b11 b10 b9 b8
+MOV R7, 1 //R7 = 1
+AND R7, R1 // R7 = b8
+XOR R2, R7 //R2 = b5 ^ b6 ^ b7 ^ b8
+XOR R6, R7 //R6 = b8
+SRL R1, 1 // R1 = 0 0 0 0 0 b11 b10 b9
+MOV R7, 1 //R7 = 1
+AND R7, R1 // R7 = b9
+XOR R2, R7 //R2 = b5 ^ b6 ^ b7 ^ b8 ^ b9
+XOR R6, R7 //R6 = b8 ^ b9
+SRL R1, 1 // R1 = 0 0 0 0 0 0 b11 b10
+MOV R7, 1 //R7 = 1
+AND R7, R1 // R7 = b10
+XOR R2, R7 //R2 = b5 ^ b6 ^ b7 ^ b8 ^ b9 ^ b10
+XOR R6, R7 //R6 = b8 ^ b9 ^ b10
+SRL R1, 1 // R1 = 0 0 0 0 0 0 0 b11
+MOV R7, 1 //R7 = 1
+AND R7, R1 // R7 = b11
+XOR R2, R7 //R2 = b5 ^ b6 ^ b7 ^ b8 ^ b9 ^ b10 ^ b11 = p8
+XOR R6, R7 //R6 = b8 ^ b9 ^ b10 ^ b11
+LD R1, R5 // R1= Mem[R5(0)] =  b8 b7 b6 b5 b4 b3  b2  b1 
+MOV R0, 1 // R0 = 1
+AND R0, R1 // R0 = b1
+SLL R0, 1 // R0 = b1 0
+SLL R0, 1 // R0 = b1 0 0
+SRL R1, 1 // R1 = 0 b8 b7 b6 b5 b4 b3  b2 
+SLL R1, 1 // R1= b8 b7 b6 b5 b4 b3  b2 0
+SLL R1, 1 // R1= b7 b6 b5 b4 b3  b2 0 0
+SLL R1, 1 // R1= b6 b5 b4 b3  b2  0 0 0 
+SLL R1, 1 // R1= b5 b4 b3  b2  0 0 0 0
+SLL R1, 1 // R1= b4 b3  b2 0 0 0 0 0
+SRL R1, 1 // R1 = 0 b4 b3 b2 0 0 0 0
+XOR R1, R0 // R1 = R1 ^ R0 = 0 b4 b3 b2 0 b1 0 0
+SLL R2, 1 // R2 = p8 0
+SLL R2, 1 // R2 = p8 0 0
+SLL R2, 1 // R2 = p8 0 0 0
+SLL R2, 1 // R2 = p8 0 0 0 0
+SLL R2, 1 // R2 = p8 0 0 0 0 0
+SLL R2, 1 // R2 = p8 0 0 0 0 0 0
+SLL R2, 1 // R2 = p8 0 0 0 0 0 0 0
+XOR R1, R2 //R1 = R1 ^ R2 = p8 b4 b3 b2 0 b1 0 0
+SW R1, R3 // Mem[30] = p8 b4 b3 b2 0 b1 0 0
+//calculate p4 = ^(b11:b8,b4,b3,b2)
+SRL R1, 1 // R1 = 0 p8 b4 b3 b2 0 b1 0
+SRL R1, 1 // R1 = 0 0 p8 b4 b3 b2 0 b1
+SRL R1, 1 // R1 = 0 0 0 p8 b4 b3 b2 0
+SRL R1, 1 // R1 = 0 0 0 0 p8 b4 b3 b2
+MOV R2, 1
+AND R2, R1 //R2 = b2
+XOR R6, R2 //R6 = b8 ^ b9 ^ b10 ^ b11 ^ b2
+SRL R1, 1 // R1 = 0 0 0 0 0 p8 b4 b3
+MOV R2, 1
+AND R2, R1 //R2 = b3
+XOR R6, R2 //R6 = b8 ^ b9 ^ b10 ^ b11 ^ b2 ^ b3
+SRL R1, 1 // R1 = 0 0 0 0 0 p8 b4
+MOV R2, 1
+AND R2, R1 //R2 = b4
+XOR R6, R2 //R6 = b8 ^ b9 ^ b10 ^ b11 ^ b2 ^ b3 ^ b4 = p4
+SLL R6, 1 //R6 = p4 0
+SLL R6, 1 //R6 = p4 0 0
+SLL R6, 1 //R6 = p4 0 0 0
+LD R1, R3 //R1 = Mem[30] = p8 b4 b3 b2 0 b1 0 0
+XOR R1, R6 //R1 = p8 b4 b3 b2 p4 b1 0 0
+SW R1, R3 // Mem[30] = p8 b4 b3 b2 p4 b1 0 0
+//calculate p2 = ^(b11,b10,b7,b6,b4,b3,b1)
+//calculate p1 = ^(b11,b9,b7,b5,b4,b2,b1)   
+MOV R0, 1 //p1
+MOV R2, 1 //p2
+SRL R1, 1 // R1 = 0 p8 b4 b3 b2 p4 b1 0
+SRL R1, 1 // R1 = 0 0 p8 b4 b3 b2 p4 b1
+AND R0, R1//R0 = b1
+AND R2, R1//R2 = b1
+SRL R1, 1 // R1 = 0 0 0 p8 b4 b3 b2 p4
+SRL R1, 1 // R1 = 0 0 0 0 p8 b4 b3 b2
+MOV R6, 1
+AND R6, R1 //R6 = b2
+XOR R0, R6 //R0 = b1 ^ b2
+SRL R1, 1 // R1 = 0 0 0 0 0 p8 b4 b3
+MOV R6, 1
+AND R6, R1 //R6 = b3
+XOR R2, R6 //R2 = b1 ^ b3
+SRL R1, 1 // R1 = 0 0 0 0 0 0 p8 b4
+MOV R6, 1
+AND R6, R1 //R6 = b4
+XOR R0, R6 //R0 = b1 ^ b2 ^ b4
+XOR R2, R6 //R2 = b1 ^ b3 ^ b4
+MOV R7, 1 // R7 = 1
+ADD R7, R3 // R7 = R3 + 1 = 31
+LD R1, R7 // R1 = mem[31] = 0 b11 b10 b9 b8 b7 b6 b5
+MOV R6, 1
+AND R6, R1 //R6 = b5
+XOR R0, R6 //R0 = b1 ^ b2 ^ b4 ^ b5
+SRL R1, 1 //  R1 = 0 0 b11 b10 b9 b8 b7 b6
+MOV R6, 1
+AND R6, R1 //R6 = b6
+XOR R2, R6 //R2 = b1 ^ b3 ^ b4 ^ b6
+SRL R1, 1 //  R1 = 0 0 0 b11 b10 b9 b8 b7
+MOV R6, 1
+AND R6, R1 //R6 = b7
+XOR R2, R6 //R2 = b1 ^ b3 ^ b4 ^ b6 ^ b7
+XOR R0, R6 //R0 = b1 ^ b2 ^ b4 ^ b5 ^ b7
+SRL R1, 1 //  R1 = 0 0 0 0 b11 b10 b9 b8
+SRL R1, 1 //  R1 = 0 0 0 0 0 b11 b10 b9
+MOV R6, 1
+AND R6, R1 //R6 = b9
+XOR R0, R6 //R0 = b1 ^ b2 ^ b4 ^ b5 ^ b7 ^ b9
+SRL R1, 1 //  R1 = 0 0 0 0 0 0 b11 b10
+MOV R6, 1
+AND R6, R1 //R6 = b10
+XOR R2, R6 //R2 = b1 ^ b3 ^ b4 ^ b6 ^ b7 ^ b10
+SRL R1, 1 //  R1 = 0 0 0 0 0 0 0 b11
+MOV R6, 1
+AND R6, R1 //R6 = b11
+XOR R0, R6 //R0 = b1 ^ b2 ^ b4 ^ b5 ^ b7 ^ b9 ^ b11 = p1
+XOR R2, R6 //R2 = b1 ^ b3 ^ b4 ^ b6 ^ b7 ^ b10 ^ b11 = p2
+SLL R2, 1 // R2 = p2 0
+XOR R2, R0 //R2 = p2 p1
+LD R1, R3 //R1 = Mem[30] = p8 b4 b3 b2 0 b1 0 0
+XOR R1, R2 //  R1 = p8 b4 b3 b2 p4 b1 p2 p1
+SW R1, R3 //R1 = Mem[30] = p8 b4 b3 b2 0 b1 p2 p1
+MOV R6, 1 // R6 = 1
+SLL R6, 1 //R6 = 1 0
+ADD R5, R6 // R5 = R6 + 2  increment R5 by 2 = 2
+ADD R3, R6 // R2 = R6 + 2  increment R3 by 2 = 32
+BNE R5, R4
+JR LOOP1_1
+HALT
+

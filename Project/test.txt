@@ -1,0 +1,13 @@
+MOV R1, 1 //R1 = 1
+SLL R3, 1 //R3 = 10
+AND R3, R1 // R3 = 11
+LOOP1_1:
+LD R1, R5 // R1= Mem[R5(0)] =  b8 b7 b6 b5 b4 b3   b2   b1 
+ADD R6, R5 // R6 = R5 + 1  
+SLL R0, 1 //R1 = 0 0 0 0 b11 b10 b9 0
+SRL R1, 1 //R1 = 0 0  0  0 b8 b7 b6 b5
+XOR R1, R0 // R1 = R1 ^ R0 =   0 b11 b10 b9 b8 b7 b6 b5
+SW R1, R3 // Mem[R3(31)] = R1 = 0 b11 b10 b9 b8 b7 b6 b5
+BNE R5, R4
+JR LOOP1_1
+HALT

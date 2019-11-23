@@ -1,0 +1,200 @@
+mov r3, 1
+csr r3, 1	// r3 = 128
+mov r4, 5
+csr r4, 3	// r4 = 160
+lw r2, r4
+mov r5, 7
+add r5, r3
+csl r5, 1
+add r5, r3
+csl r5, 1	// r5=00011111
+csr r2, 3
+and r2, r5	// r2 &= r5
+mov r6, 0
+
+loop3_1_1: lw r1, r3	// r1 = mem[r3]
+and r1, r5	
+bne r1, r2	// if r1 != r2
+jump else3_1_1
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+
+else3_1_1: lw r1, r3	// r1 = mem[r3]
+csr r1, 1	
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_1_2
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+
+else3_1_2: lw r1, r3	// r1 = mem[r3]
+csr r1, 2
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_1_3
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+
+else3_1_3: lw r1, r3	// r1 = mem[r3]
+csr r1, 3
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_1_4
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+
+else3_1_4: mov r3, 3
+csr r3, 1	// r3 = 129
+bne r3, r4	// if r3 != r4
+jump loop3_1_1
+mov r7, 3	// r7 = 3
+csr r7, 2	// r7 = 192
+sw r6, r7
+
+mov r3, 1
+csr r3, 1	// r3 = 128
+mov r6, 0	//r6 = 0
+
+loop3_2_1: lw r1, r3	// r1 = mem[r3]
+and r1, r5	
+bne r1, r2	// if r1 != r2
+jump else3_2_1
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+jump end3_2
+
+else3_2_1: lw r1, r3	// r1 = mem[r3]
+csr r1, 1
+and r1, r5	
+bne r1, r2	// if r1 != r2
+jump else3_2_2
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+jump end3_2
+
+else3_2_2: lw r1, r3	// r1 = mem[r3]
+csr r1, 2
+and r1, r5	
+bne r1, r2	// if r1 != r2
+jump else3_2_3
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+Jump end3_2
+
+else3_2_3: lw r1, r3	// r1 = mem[r3]
+csr r1, 3
+and r1, r5	
+bne r1, r2	// if r1 != r2
+jump end3_2
+csl r3, 1
+add r6, r3	// r6++
+csr r3, 1
+
+end3_2: mov r3, 3
+csr r3, 1	// r3 = 129
+bne r3, r4 	// if r3 != r4
+jump loop3_2_1
+mov r7, 7
+csr r7, 2	// r7 = 193
+sw r6, r7
+
+mov r7, 3
+csr r7, 2	// r7 = 192
+lw r6, r7	// r6 = mem[r7]
+mov r3, 3
+mov r4, 7
+csl r4, 2
+add r4, r3
+csl r4, 3
+mov r3, 4
+add r4, r3
+mov r3, 1
+csr r3, 1	// r3 = 128
+csr r4, 3	// r4 = 159
+
+loop3_3_1: lw r0, r3	// r0 = mem[r3]
+csl r0, 2
+csl r0, 2
+mov r1, 7	// r1 = 7
+mov r7, 1	// r7 = 1
+csl r1, 1
+add r1, r7	// r1 += r7
+csl r1, 2
+csl r1, 2
+and r0, r1
+csr r1, 2
+csr r1, 2
+add r3, r7	// r3 = 129
+lw r7, r3	// r7 = mem[r3]
+csr r7, 2
+csr r7, 2
+and r1, r7
+add r1, r0
+mov r0, 0
+add r0, r1	// r0 = r1
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_3_1
+mov r3, 1
+add r6, r3	// r6++
+mov r3, 3
+csr r3, 1
+
+else3_3_1: mov r1, 0
+add r1, r0	// r1 = r0
+csr r1, 1
+mov r0, 0
+add r0, r1	// r0 = r1
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_3_2
+mov r3, 1
+add r6, r3	// r6++
+mov r3, 3
+csr r3, 1
+
+else3_3_2: mov r1, 0
+add r1, r0	// r1 = r0
+csr r1, 1
+mov r0, 0
+add r0, r1	// r0 = r1
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_3_3
+mov r3, 1
+add r6, r3	// r6++
+mov r3, 3
+csr r3, 1
+
+else3_3_3: mov r1, 0
+add r1, r0	// r1 = r0
+csr r1, 1
+and r1, r5
+bne r1, r2	// if r1 != r2
+jump else3_3_4
+mov r3, 1
+add r6, r3	// r6++
+mov r3, 3
+csr r3, 1
+
+else3_3_4: mov r3, 5
+csr r3, 1	// r3 = 130
+bne r3, r4	// if r3 != r4
+jump loop3_3_1
+mov r7, 3
+csr r7, 2
+mov r3, 2
+add r7, r3	// r7 = 194
+mov r3, 5
+csr r3, 1
+sw r6, r7
+
+
+

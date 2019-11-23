@@ -1,0 +1,149 @@
+C:/Users/chg056/Desktop/Project/InstROM_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/InstROM_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module InstROM_tb
+
+Top level modules:
+	InstROM_tb
+
+} {} {}} C:/Users/chg056/Desktop/Project/reg_file_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/reg_file_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module reg_file_tb
+
+Top level modules:
+	reg_file_tb
+
+} {} {}} C:/Users/chg056/Desktop/Project/ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module TopLevel_tb3
+
+Top level modules:
+	TopLevel_tb3
+
+} {} {}} C:/Users/chg056/Desktop/Project/TopLevel.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/TopLevel.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module TopLevel
+
+Top level modules:
+	TopLevel
+
+} {} {}} C:/Users/chg056/Desktop/Project/InstROM.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/InstROM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module InstROM
+
+Top level modules:
+	InstROM
+
+} {} {}} C:/Users/chg056/Desktop/Project/LUT.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/LUT.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module LUT
+
+Top level modules:
+	LUT
+
+} {} {}} C:/Users/chg056/Desktop/Project/Ctrl.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/Ctrl.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Ctrl
+
+Top level modules:
+	Ctrl
+
+} {} {}} C:/Users/chg056/Desktop/Project/data_mem_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/data_mem_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module data_mem_tb
+
+Top level modules:
+	data_mem_tb
+
+} {} {}} C:/Users/chg056/Desktop/Project/Toplevel3.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/Toplevel3.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module TopLevel3
+
+Top level modules:
+	TopLevel3
+
+} {} {}} C:/Users/chg056/Desktop/Project/LUT1.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/LUT1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module LUT1
+
+Top level modules:
+	LUT1
+
+} {} {}} C:/Users/chg056/Desktop/Project/TopLevel_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/TopLevel_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module TopLevel_tb
+
+Top level modules:
+	TopLevel_tb
+
+} {} {}} C:/Users/chg056/Desktop/Project/data_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/data_mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module data_mem
+
+Top level modules:
+	data_mem
+
+} {} {}} C:/Users/chg056/Desktop/Project/LUT3.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/LUT3.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module LUT3
+
+Top level modules:
+	LUT3
+
+} {} {}} C:/Users/chg056/Desktop/Project/Ctrl_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/Ctrl_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Ctrl_tb
+
+Top level modules:
+	Ctrl_tb
+
+} {} {}} C:/Users/chg056/Desktop/Project/PC.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/PC.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PgmCtr
+
+Top level modules:
+	PgmCtr
+
+} {} {}} C:/Users/chg056/Desktop/Project/reg_file.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/reg_file.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module reg_file
+
+Top level modules:
+	reg_file
+
+} {} {}} C:/Users/chg056/Desktop/Project/LUT2.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/LUT2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module LUT2
+
+Top level modules:
+	LUT2
+
+} {} {}} C:/Users/chg056/Desktop/Project/ALU_tb.sv {2 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/ALU_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_tb
+** Warning: C:/Users/chg056/Desktop/Project/ALU_tb.sv(30): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	ALU_tb
+
+} {} {}} C:/Users/chg056/Desktop/Project/InstRom3.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/InstRom3.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module InstROM3
+
+Top level modules:
+	InstROM3
+
+} {} {}} C:/Users/chg056/Desktop/Project/PC_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/chg056/Desktop/Project/PC_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PC_tb
+
+Top level modules:
+	PC_tb
+
+} {} {}}

@@ -1,0 +1,466 @@
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+vsim -gui work.TopLevel_tb3
+# vsim -gui work.TopLevel_tb3 
+# Start time: 13:58:47 on Jun 06,2019
+# Loading sv_std.std
+# Loading work.TopLevel_tb3
+# Loading work.TopLevel3
+# Loading work.PgmCtr
+# Loading work.InstROM3
+# Loading work.Ctrl
+# Loading work.LUT3
+# Loading work.reg_file
+# Loading work.ALU
+# Loading work.data_mem
+run -all
+#  
+# start program 3
+#  
+# ctb =  96  96
+# cto =  32  32
+# cts = 127   0
+# **** oops!****
+# ** Note: $stop    : C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv(119)
+#    Time: 13715 ns  Iteration: 0  Instance: /TopLevel_tb3
+# Break in Module TopLevel_tb3 at C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv line 119
+add wave -position insertpoint  \
+sim:/TopLevel_tb3/DUT/instr_ROM1/InstAddress
+add wave -position insertpoint  \
+sim:/TopLevel_tb3/DUT/instr_ROM1/InstOut
+add wave -position insertpoint  \
+sim:/TopLevel_tb3/DUT/PC1/CLK
+add wave -position insertpoint  \
+sim:/TopLevel_tb3/DUT/reg_file1/registers
+add wave -position insertpoint  \
+sim:/TopLevel_tb3/DUT/dm1/core
+restart -f
+run -all
+#  
+# start program 3
+#  
+# ctb =  96  96
+# cto =  32  32
+# cts = 127   0
+# **** oops!****
+# ** Note: $stop    : C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv(119)
+#    Time: 13715 ns  Iteration: 0  Instance: /TopLevel_tb3
+# Break in Module TopLevel_tb3 at C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv line 119
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+run -all
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+run -all
+quit -sim
+vsim -gui work.TopLevel_tb3
+# End time: 14:06:45 on Jun 06,2019, Elapsed time: 0:07:58
+# Errors: 0, Warnings: 0
+# vsim -gui work.TopLevel_tb3 
+# Start time: 14:06:45 on Jun 06,2019
+# Loading sv_std.std
+# Loading work.TopLevel_tb3
+# Loading work.TopLevel3
+# Loading work.PgmCtr
+# Loading work.InstROM3
+# Loading work.Ctrl
+# Loading work.LUT3
+# Loading work.reg_file
+# Loading work.ALU
+# Loading work.data_mem
+run -all
+#  
+# start program 3
+#  
+# ctb =  96  96
+# cto =  32  32
+# cts = 127 127
+# ** Note: $stop    : C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv(119)
+#    Time: 25825 ns  Iteration: 0  Instance: /TopLevel_tb3
+# Break in Module TopLevel_tb3 at C:/Users/chg056/Desktop/Project/Toplevel_tb3.sv line 119
+quit -sim
+# End time: 14:24:08 on Jun 06,2019, Elapsed time: 0:17:23
+# Errors: 0, Warnings: 0
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+vsim -gui work.TopLevel_tb
+# vsim -gui work.TopLevel_tb 
+# Start time: 14:37:57 on Jun 06,2019
+# Loading sv_std.std
+# Loading work.TopLevel_tb
+# Loading work.TopLevel
+# Loading work.PgmCtr
+# Loading work.InstROM
+# Loading work.Ctrl
+# Loading work.LUT
+# Loading work.reg_file
+# Loading work.ALU
+# Loading work.data_mem
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+run -all
+# start program 1
+#  
+# 0101001010101010
+# 0101001010101010
+#  
+# 0110100010001110
+# 0110100010001110
+#  
+# 0110000001001101
+# 0110000001001101
+#  
+# 0110011000011110
+# 0110011000011110
+#  
+# 0011000001100101
+# 0011000001100101
+#  
+# 0001100001100111
+# 0001100001100111
+#  
+# 0100011010100111
+# 0100011010100111
+#  
+# 0010000100010010
+# 0010000100010010
+#  
+# 0011000000000100
+# 0011000000000100
+#  
+# 0101000001100100
+# 0101000001100100
+#  
+# 0001011100111010
+# 0001011100111010
+#  
+# 0101001101100111
+# 0101001101100111
+#  
+# 0111111001100111
+# 0111111001100111
+#  
+# 0111100001100001
+# 0111100001100001
+#  
+# 0001111111001101
+# 0001111111001101
+#  
+#  
+# start program 2
+#  
+# 0000010011000110
+# 0000010011000110
+#  
+# 0000001010101010
+# 0000001010101010
+#  
+# 0000001001110111
+# 0000001001110111
+#  
+# 0000001110001111
+# 0000001110001111
+#  
+# 0000011011001110
+# 0000011011001110
+#  
+# 0000011011000101
+# 0000011011000101
+#  
+# 0000000010111101
+# 0000000010111101
+#  
+# 0000011001100101
+# 0000011001100101
+#  
+# 0000011100001010
+# 0000011100001010
+#  
+# 0000000100100000
+# 0000000100100000
+#  
+# 0000010010011101
+# 0000010010011101
+#  
+# 0000000000010011
+# 0000000000010011
+#  
+# 0000011001010011
+# 0000011001010011
+#  
+# 0000001011010101
+# 0000001011010101
+#  
+# 0000011010101110
+# 0000011010101110
+#  
+#  
+# start program 3
+#  
+# ctb =  96  96
+# cts = 127  32
+# cto =  32 127
+# ** Note: $stop    : C:/Users/chg056/Desktop/Project/TopLevel_tb.sv(146)
+#    Time: 86335 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/chg056/Desktop/Project/TopLevel_tb.sv line 146
+# Compile of PC_tb.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of InstROM_tb.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful with warnings.
+# Compile of Ctrl_tb.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# Compile of data_mem.sv was successful.
+# Compile of data_mem_tb.sv was successful.
+# Compile of LUT1.sv was successful.
+# Compile of LUT2.sv was successful.
+# Compile of LUT3.sv was successful.
+# Compile of Toplevel_tb3.sv was successful.
+# Compile of Toplevel3.sv was successful.
+# Compile of InstRom3.sv was successful.
+# 21 compiles, 0 failed with no errors.
+restart -f
+# Loading work.TopLevel_tb
+# Loading work.TopLevel
+# Loading work.PgmCtr
+# Loading work.InstROM
+# Loading work.Ctrl
+# Loading work.LUT
+# Loading work.reg_file
+# Loading work.ALU
+# Loading work.data_mem
+run -all
+# start program 1
+#  
+# 0101001010101010
+# 0101001010101010
+#  
+# 0110100010001110
+# 0110100010001110
+#  
+# 0110000001001101
+# 0110000001001101
+#  
+# 0110011000011110
+# 0110011000011110
+#  
+# 0011000001100101
+# 0011000001100101
+#  
+# 0001100001100111
+# 0001100001100111
+#  
+# 0100011010100111
+# 0100011010100111
+#  
+# 0010000100010010
+# 0010000100010010
+#  
+# 0011000000000100
+# 0011000000000100
+#  
+# 0101000001100100
+# 0101000001100100
+#  
+# 0001011100111010
+# 0001011100111010
+#  
+# 0101001101100111
+# 0101001101100111
+#  
+# 0111111001100111
+# 0111111001100111
+#  
+# 0111100001100001
+# 0111100001100001
+#  
+# 0001111111001101
+# 0001111111001101
+#  
+#  
+# start program 2
+#  
+# 0000010011000110
+# 0000010011000110
+#  
+# 0000001010101010
+# 0000001010101010
+#  
+# 0000001001110111
+# 0000001001110111
+#  
+# 0000001110001111
+# 0000001110001111
+#  
+# 0000011011001110
+# 0000011011001110
+#  
+# 0000011011000101
+# 0000011011000101
+#  
+# 0000000010111101
+# 0000000010111101
+#  
+# 0000011001100101
+# 0000011001100101
+#  
+# 0000011100001010
+# 0000011100001010
+#  
+# 0000000100100000
+# 0000000100100000
+#  
+# 0000010010011101
+# 0000010010011101
+#  
+# 0000000000010011
+# 0000000000010011
+#  
+# 0000011001010011
+# 0000011001010011
+#  
+# 0000001011010101
+# 0000001011010101
+#  
+# 0000011010101110
+# 0000011010101110
+#  
+#  
+# start program 3
+#  
+# ctb =  96  96
+# cto =  32  32
+# cts = 127 127
+# ** Note: $stop    : C:/Users/chg056/Desktop/Project/TopLevel_tb.sv(146)
+#    Time: 86335 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/chg056/Desktop/Project/TopLevel_tb.sv line 146
+# End time: 14:40:03 on Jun 06,2019, Elapsed time: 0:02:06
+# Errors: 0, Warnings: 0

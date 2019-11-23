@@ -1,0 +1,231 @@
+//program 3
+//R1 = data, R2 = pattern, R3 = 128, R4 = 160
+//R5 = 00001111, R6 = count1, R7 = 192, 193, 194
+MOV R3, 1 //R3 = 1
+SLL R3, 1 //R3 = 10
+SLL R3, 1 //R3 = 100
+SLL R3, 1 //R3 = 1000
+SLL R3, 1 //R3 = 10000
+SLL R3, 1 //R3 = 100000
+SLL R3, 1 //R3 = 1000000
+SLL R3, 1 //R3 = 10000000 (128)
+MOV R4, 1 //R4 = 1
+SLL R4, 1 //R4 = 10
+SLL R4, 1 //R4 = 100
+INC R4 //R4 = 101
+SLL R4, 1 //R4 = 1010
+SLL R4, 1 //R4 = 10100
+SLL R4, 1 //R4 = 101000
+SLL R4, 1 //R4 = 1010000
+SLL R4, 1 //R4 = 10100000 (160)
+LD R2, R4 //R2 = Mem[160] (pattern) (ex: 00001101)
+MOV R5, 1 //R5 = 1
+SLL R5, 1 //R5 =10
+INC R5 // R5 = 11
+SLL R5, 1 //R5 =110
+INC R5 //R5 = 111
+SLL R5, 1 //R5 =1110
+INC R5 // R5 = 1111
+MOV R6, 0 //R6 = 0
+LOOP3_1_1:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+AND R1, R5 //R1 = 00001010
+BNE R1, R2 //if R1 != R2
+JR ELSE3_1_1
+INC R6 //R6++ (count+1)
+ELSE3_1_1:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+AND R1, R5 //R1 = 00001101
+BNE R1, R2 //if R1 != R2
+JR ELSE3_1_2
+INC R6 //R6++ (count+1)
+ELSE3_1_2:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+SRL R1, 1 //R1 = 00110110
+AND R1, R5 //R1 = 00000110
+BNE R1, R2 //if R1 != R2
+JR ELSE3_1_3
+INC R6 //R6++ (count+1)
+ELSE3_1_3:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+SRL R1, 1 //R1 = 00110110
+SRL R1, 1 //R1 = 00011011
+AND R1, R5 //R1 = 00001011
+BNE R1, R2 //if R1 != R2
+JR ELSE3_1_4
+INC R6 //R6++ (count+1)
+ELSE3_1_4:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+SRL R1, 1 //R1 = 00110110
+SRL R1, 1 //R1 = 00011011
+SRL R1, 1 //R1 = 00001101
+AND R1, R5 //R1 = 00001011
+BNE R1, R2 //if R1 != R2
+JR ELSE3_1_5
+INC R6 //R6++ (count+1)
+ELSE3_1_5:
+INC R3 //R3++
+BNE R3, R4 
+JR LOOP3_1_1
+MOV R7, 1 //R7 = 1
+SLL R7, 1 //R7 = 10
+INC R7 //R7 = 11
+SLL R7, 1 //R7 = 110
+SLL R7, 1 //R7 = 1100
+SLL R7, 1 //R7 = 11000
+SLL R7, 1 //R7 = 110000
+SLL R7, 1 //R7 = 1100000
+SLL R7, 1 //R7 = 11000000 (192)
+SW R6, R7
+
+//R1 = data, R2 = pattern, R3 = 128, R4 = 160
+//R5 = 00001111, R6 = count2
+MOV R3, 1 //R3 = 1
+SLL R3, 1 //R3 = 10
+SLL R3, 1 //R3 = 100
+SLL R3, 1 //R3 = 1000
+SLL R3, 1 //R3 = 10000
+SLL R3, 1 //R3 = 100000
+SLL R3, 1 //R3 = 1000000
+SLL R3, 1 //R3 = 10000000 (128)
+LD R2, R4 //R2 = Mem[160] (pattern) (ex: 00001101)
+MOV R5, 1 //R5 = 1
+SLL R5, 1 //R5 =10
+INC R5 // R5 = 11
+SLL R5, 1 //R5 =110
+INC R5 //R5 = 111
+SLL R5, 1 //R5 =1110
+INC R5 // R5 = 1111
+MOV R6, 0 //R6 = 0
+LOOP3_2_1:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+AND R1, R5 //R1 = 00001010
+BNE R1, R2 //if R1 != R2
+JR ELSE3_2_1
+INC R6 //R6++ (count+1)
+JR END3_2
+ELSE3_2_1:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+AND R1, R5 //R1 = 00001101
+BNE R1, R2 //if R1 != R2
+JR ELSE3_2_2
+INC R6 //R6++ (count+1)
+JR END3_2
+ELSE3_2_2:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+SRL R1, 1 //R1 = 00110110
+AND R1, R5 //R1 = 00000110
+BNE R1, R2 //if R1 != R2
+JR ELSE3_2_3
+INC R6 //R6++ (count+1)
+JR END3_2
+ELSE3_2_3:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+SRL R1, 1 //R1 = 00110110
+SRL R1, 1 //R1 = 00011011
+AND R1, R5 //R1 = 00001011
+BNE R1, R2 //if R1 != R2
+JR ELSE3_2_4
+INC R6 //R6++ (count+1)
+JR END3_2
+ELSE3_2_4:
+LD R1, R3 //R1 = Mem[R3] (ex: 11011010)
+SRL R1, 1 //R1 = 01101101
+SRL R1, 1 //R1 = 00110110
+SRL R1, 1 //R1 = 00011011
+SRL R1, 1 //R1 = 00001101
+AND R1, R5 //R1 = 00001011
+BNE R1, R2 //if R1 != R2
+JR ELSE3_2_5
+INC R6 //R6++ (count+1)
+JR END3_2
+ELSE3_2_5:
+END3_2:
+INC R3 //R3++
+BNE R3, R4 
+JR LOOP3_2_1
+INC R7 //(193)
+SW R6, R7
+
+//R2 = pattern, R3 = 128, R4 = 159 
+//R5 = 00001111, R6 = count, R7 = 192, 193, 194
+MOV R3, 1 //R3 = 1
+SLL R3, 1 //R3 = 10
+SLL R3, 1 //R3 = 100
+SLL R3, 1 //R3 = 1000
+SLL R3, 1 //R3 = 10000
+SLL R3, 1 //R3 = 100000
+SLL R3, 1 //R3 = 1000000
+SLL R3, 1 //R3 = 10000000 (128)
+LD R2, R4 //R2 = Mem[160] (pattern) (ex: 00001101)
+MOV R5, 1 //R5 = 1
+SLL R5, 1 //R5 =10
+INC R5 // R5 = 11
+SLL R5, 1 //R5 =110
+INC R5 // R5 = 111
+SLL R5, 1 //R5 =1110
+INC R5 // R5 = 1111
+MOV R6, 0 //R6 = 0
+LD R0, R3 //R0 = mem[128] = b8 b7 b6 b5 b4 b3  b2  b1
+LOOP3_3_1:
+AND R0, R5 //R0 get 4 bit
+BNE R0, R2 //R0 != pattern
+JR ELSE3_3_1
+INC R6
+ELSE3_3_1:
+SRL R0, 1 //R0 = 0 b8 b7 b6 b5 b4 b3 b2
+AND R0, R5 //R0 get 4 bit
+BNE R0, R2 //R0 != pattern
+JR ELSE3_3_2
+INC R6
+ELSE3_3_2:
+SRL R0, 1 //R0 = 0 0 b8 b7 b6 b5 b4 b3
+AND R0, R5 //R0 get 4 bit
+BNE R0, R2 //R0 != pattern
+JR ELSE3_3_3
+INC R6
+ELSE3_3_3:
+SRL R0, 1 //R0 = 0 0 0 b8 b7 b6 b5 b4
+AND R0, R5 //R0 get 4 bit
+BNE R0, R2 //R0 != pattern
+JR ELSE3_3_4
+INC R6
+ELSE3_3_4:
+SRL R0, 1 //R0 = 0 0 0 0 b8 b7 b6 b5
+AND R0, R5 //R0 get 4 bit
+BNE R0, R2 //R0 != pattern
+JR ELSE3_3_5
+INC R6
+ELSE3_3_5:
+BNE R3, R4 //R3 != 159 
+JR COMBINE
+JR END3_3
+COMBINE:
+INC R3
+LD R1, R3 //R1 = MEM[129] = b16 b15 b14 b13 b12 b11 b10 b9
+SLL R1, 1 //R1 = b15 b14 b13 b12 b11 b10 b9 0
+SLL R1, 1 //R1 = b14 b13 b12 b11 b10 b9 0 0
+SLL R1, 1 //R1 = b13 b12 b11 b10 b9 0 0 0
+SLL R1, 1 //R1 = b12 b11 b10 b9 0 0 0 0
+XOR R0, R1 //R0 = b12 b11 b10 b9 b8 b7 b6 b5
+JR LOOP3_3_1 
+END3_3:
+LD R1, R3 //R1 = MEM[159] = b16 b15 b14 b13 b12 b11 b10 b9
+SRL R1, 1 //R1 = 0 b16 b15 b14 b13 b12 b11 b10
+SRL R1, 1 //R1 = 0 0 b16 b15 b14 b13 b12 b11
+SRL R1, 1 //R1 = 0 0 0 b16 b15 b14 b13 b12
+SRL R1, 1 //R1 = 0 0 0 0 b16 b15 b14 b13
+BNE R1, R2 //R1 != pattern
+JR FINAL3_3
+INC R6
+FINAL3_3:
+INC R7 //(194)
+SW R6, R7
+HALT
