@@ -8,12 +8,16 @@ add r5, r3
 csl r5, 1
 add r5, r3
 csl r5, 1	// r5=00011111
+mov r3, 3
+csr r3, 3
+add r3, r5  // r3 = 127
 csr r2, 3
 and r2, r5	// r2 &= r5
 mov r6, 0
 
-loop3_1_1: lw r1, r3	// r1 = mem[r3]
-mov r7, 1
+loop3_1_1: mov r7, 1
+add r3, r7  // r3 = 128
+lw r1, r3	// r1 = mem[r3]
 and r1, r5	
 bne r1, r2	// if r1 != r2
 jump else3_1_1
@@ -160,8 +164,7 @@ bne r1, r2	// if r1 != r2
 jump else3_3_4
 add r6, r7	// r6++
 
-else3_3_4: add r3, r7
-bne r3, r4	// if r3 != r4
+else3_3_4: bne r3, r4	// if r3 != r4
 jump loop3_3_1
 mov r7, 3
 csr r7, 2
