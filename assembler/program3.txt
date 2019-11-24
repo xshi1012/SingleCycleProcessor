@@ -13,42 +13,34 @@ and r2, r5	// r2 &= r5
 mov r6, 0
 
 loop3_1_1: lw r1, r3	// r1 = mem[r3]
+mov r7, 1
 and r1, r5	
 bne r1, r2	// if r1 != r2
 jump else3_1_1
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
 
 else3_1_1: lw r1, r3	// r1 = mem[r3]
 csr r1, 1	
 and r1, r5
 bne r1, r2	// if r1 != r2
 jump else3_1_2
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
 
 else3_1_2: lw r1, r3	// r1 = mem[r3]
 csr r1, 2
 and r1, r5
 bne r1, r2	// if r1 != r2
 jump else3_1_3
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
 
 else3_1_3: lw r1, r3	// r1 = mem[r3]
 csr r1, 3
 and r1, r5
 bne r1, r2	// if r1 != r2
 jump else3_1_4
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
 
-else3_1_4: mov r3, 3
-csr r3, 1	// r3 = 129
+else3_1_4: add r3, r7
 bne r3, r4	// if r3 != r4
 jump loop3_1_1
 mov r7, 3	// r7 = 3
@@ -58,14 +50,14 @@ sw r6, r7
 mov r3, 1
 csr r3, 1	// r3 = 128
 mov r6, 0	//r6 = 0
+mov r7, 1
 
 loop3_2_1: lw r1, r3	// r1 = mem[r3]
 and r1, r5	
 bne r1, r2	// if r1 != r2
 jump else3_2_1
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
+bne r3, r7
 jump end3_2
 
 else3_2_1: lw r1, r3	// r1 = mem[r3]
@@ -73,9 +65,8 @@ csr r1, 1
 and r1, r5	
 bne r1, r2	// if r1 != r2
 jump else3_2_2
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
+bne r3, r7
 jump end3_2
 
 else3_2_2: lw r1, r3	// r1 = mem[r3]
@@ -83,9 +74,8 @@ csr r1, 2
 and r1, r5	
 bne r1, r2	// if r1 != r2
 jump else3_2_3
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
+bne r3, r7
 Jump end3_2
 
 else3_2_3: lw r1, r3	// r1 = mem[r3]
@@ -93,12 +83,9 @@ csr r1, 3
 and r1, r5	
 bne r1, r2	// if r1 != r2
 jump end3_2
-csl r3, 1
-add r6, r3	// r6++
-csr r3, 1
+add r6, r7	// r6++
 
-end3_2: mov r3, 3
-csr r3, 1	// r3 = 129
+end3_2: add r3, r7	// r3 = 129
 bne r3, r4 	// if r3 != r4
 jump loop3_2_1
 mov r7, 7
@@ -140,12 +127,10 @@ add r1, r0
 mov r0, 0
 add r0, r1	// r0 = r1
 and r1, r5
+mov r7, 1
 bne r1, r2	// if r1 != r2
 jump else3_3_1
-mov r3, 1
-add r6, r3	// r6++
-mov r3, 3
-csr r3, 1
+add r6, r7	// r6++
 
 else3_3_1: mov r1, 0
 add r1, r0	// r1 = r0
@@ -155,10 +140,7 @@ add r0, r1	// r0 = r1
 and r1, r5
 bne r1, r2	// if r1 != r2
 jump else3_3_2
-mov r3, 1
-add r6, r3	// r6++
-mov r3, 3
-csr r3, 1
+add r6, r7	// r6++
 
 else3_3_2: mov r1, 0
 add r1, r0	// r1 = r0
@@ -168,10 +150,7 @@ add r0, r1	// r0 = r1
 and r1, r5
 bne r1, r2	// if r1 != r2
 jump else3_3_3
-mov r3, 1
-add r6, r3	// r6++
-mov r3, 3
-csr r3, 1
+add r6, r7	// r6++
 
 else3_3_3: mov r1, 0
 add r1, r0	// r1 = r0
@@ -179,22 +158,13 @@ csr r1, 1
 and r1, r5
 bne r1, r2	// if r1 != r2
 jump else3_3_4
-mov r3, 1
-add r6, r3	// r6++
-mov r3, 3
-csr r3, 1
+add r6, r7	// r6++
 
-else3_3_4: mov r3, 5
-csr r3, 1	// r3 = 130
+else3_3_4: add r3, r7
 bne r3, r4	// if r3 != r4
 jump loop3_3_1
 mov r7, 3
 csr r7, 2
 mov r3, 2
 add r7, r3	// r7 = 194
-mov r3, 5
-csr r3, 1
 sw r6, r7
-
-
-
