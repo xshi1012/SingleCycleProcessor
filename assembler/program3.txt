@@ -102,13 +102,11 @@ add r4, r3
 csl r4, 3
 mov r3, 4
 add r4, r3
-mov r3, 3
-csr r3, 3
-add r3, r5  // r3 = 127
+mov r3, 1
+csr r3, 1   // r3 = 128
 csr r4, 3	// r4 = 159
 
 loop3_3_1: mov r7, 1
-add r3, r7
 lw r0, r3	// r0 = mem[r3]
 csl r0, 2
 csl r0, 2

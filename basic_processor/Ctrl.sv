@@ -174,7 +174,3 @@ always_comb begin
 end
 
 endmodule
-
-   // ARM instructions sequence
-   //				cmp r5, r4
-   //				beq jump_label
