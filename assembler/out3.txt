@@ -152,3 +152,4 @@ csr r7 2
 mov r3 2
 add r7 r3
 sw r6 r7
+halt
