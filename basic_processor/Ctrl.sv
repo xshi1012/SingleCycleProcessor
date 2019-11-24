@@ -83,7 +83,7 @@ always_comb begin
         read_mem = 0;
         jump_en = 0;
         if(instruction[2:0] == 3'b000) begin
-          Halt = 0;
+          Halt = 1;
         end
         else begin
           Halt = 0;
