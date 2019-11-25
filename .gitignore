@@ -4,3 +4,5 @@
 **/*.wlf
 **/*transcript
 **/*.DS_Store
+./basic_processor/work
+./basic_processor/work/*
