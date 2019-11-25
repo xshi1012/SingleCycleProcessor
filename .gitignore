@@ -1,0 +1,6 @@
+**/*.bak
+**/*.mpf
+**/*.mti
+**/*.wlf
+**/*transcript
+**/*.DS_Store
