@@ -6,3 +6,4 @@
 **/*.DS_Store
 ./basic_processor/work
 ./basic_processor/work/*
+./*.DS_Store
