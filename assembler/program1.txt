@@ -1,17 +1,18 @@
-mov r7, 0
-loop: mov r0, 0
+mov r7, 0   // r7 -> i 
+loop1_1: mov r0, 0
 add r0, r7
-add r0, r7
-lw r1, r0	// r1 = [2i], input lsw
+add r0, r7  // r0 = 2 r7(2i)
+lw r1, r0   // r1 = (2i)    lsw
 mov r2, 1
 add r0, r2
-lw r2, r0	// r2 = [2i + 1], input msw
+lw r2, r0   // r2 = (2i + 1) msw
+
 mov r0, 0
-add r0, r1	// r0 -> temp value = lsw
-mov r3, 0	// p1
-mov r4, 0	// p2
-mov r5, 0	// p4
-mov r6, 0	// p8
+add r0, r1
+mov r3, 0
+mov r4, 0
+mov r5, 0
+mov r6, 0
 xor r3, r0
 xor r4, r0
 csr r0, 1
@@ -56,133 +57,122 @@ and r3, r0
 and r4, r0
 and r5, r0
 and r6, r0
-csl r4, 1
-csl r5, 3
-csl r6, 3
-csl r6, 3
-csl r6, 1
-mov r2, 0		// output LSW = 0
-add r2, r3
-add r2, r4
-add r2, r5
-add r2, r6		// LSW = p8 0 0 0 p4 0 p2 p1
-mov r0 ,1
-and r0, r1
-csl r0, 2
-add r2, r0
+csl r3, 1
+csl r4, 2
+csl r5, 2
+csl r5, 2
+add r5, r4
+add r5, r3 // r5 = 0 0 0 p4 0 p2 p1 0
+// r0, r3, r4   free
+
+mov r0, 1
+and r0, r1  // b1
+csl r0, 3
+add r5, r0 // r5 = 0 0 0 p4 b1 p2 p1 0
 mov r0, 2
-and r0, r1
-csl r0, 3
-add r2, r0
+and r0, r1  // b2
+csl r0, 2
+csl r0, 2
+add r5, r0  // r5 = 0 0 b2 p4 b1 p2 p1 0
 mov r0, 4
-and r0, r1
-csl r0, 3
-add r2, r0
+and r0, r1  // b3
+csl r0, 2
+csl r0, 2
+add r5, r0  // r5 = 0 b3 b2 p4 b1 p2 p1 0
 mov r0, 4
 csl r0, 1
-and r0, r1
+and r0, r1  // b4
+csl r0, 2
+csl r0, 2
+add r5, r0  // r5 = b4 b3 b2 p4 b1 p2 p1 0
+
+mov r0, 4
+csl r0, 2
+and r0, r1  // b5
+csr r0, 3
+add r6, r0  // r6 = 0 0 0 0 0 0 b5 p8
+mov r0, 4
 csl r0, 3
-add r2, r0	// LSW = p8 b4 b3 b2 p4 b1 p2 p1
+and r0, r1  // b6
+csr r0, 3
+add r6, r0  // r6 = 0 0 0 0 0 b6 b5 p8
+mov r0, 1
+csr r0, 2
+and r0, r1  // b7
+csr r0, 3
+add r6, r0  // r6 = 0 0 0 0 b7 b6 b5 p8
+mov r0, 1
+csr r0, 1
+and r0, r1  // b8
+csr r0, 3
+add r6, r0  // r6 = 0 0 0 b8 b7 b6 b5 p8
+mov r0, 1
+and r0, r2  // b9
+csr r0, 3
+add r6, r0  // r6 = 0 0 b9 b8 b7 b6 b5 p8
+mov r0, 2
+and r0, r2  // b10
+csr r0, 3
+add r6, r0  // r6 = 0 b10 b9 b8 b7 b6 b5 p8
+mov r0, 4
+and r0, r2  // b11
+csr r0, 3
+add r6, r0  // r6 = b11 b10 b9 b8 b7 b6 b5 p8
+
+mov r3, 0
 mov r0, 0
-add r0, r7
-add r0, r7	// r0 -> 2i
-mov r4, 1
-add r0, r4	// r0 -> 2i + 1
-lw r3, r0
-mov r4, 0	// output MSW = 0
-mov r0, 4
-csl r0, 2
-and r0, r1
-csr r0, 2
-csr r0, 2
-add r4, r0
-mov r0, 4
-csl r0, 3
-and r0, r1
-csr r0, 2
-csr r0, 2
-add r4, r0
-mov r0, 4
-csl r0, 2
-csl r0, 2
-and r0, r1
-csr r0, 2
-csr r0, 2
-add r4, r0
-mov r0, 4
-csl r0, 3
-csl r0, 2
-and r0, r1
-csr r0, 2
-csr r0, 2
-add r4, r0	// MSW = 0 0 0 0 b8 b7 b6 b5
+add r0, r5
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+
+mov r0, 0
+add r0, r6
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+csr r0, 1
+xor r3, r0
+
 mov r0, 1
 and r0, r3
-csl r0, 2
-csl r0, 2
-add r4, r0
-mov r0, 2
-and r0, r3
-csl r0, 2
-csl r0, 2
-add r4, r0
-mov r0, 4
-and r0, r3
-csl r0, 2
-csl r0, 2
-add r4, r0	// MSW = 0 b11 b10 b9 b8 b7 b6 b5
-mov r6, 0	// p16 = 0
-mov r0, 0
-add r0, r2	// temp = LSW
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-mov r0, 0
-add r0, r4	// temp = MSW
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csr r0, 1
-xor r6, r0
-csl r6, 3
-csl r6, 3
-csl r6, 1
-add r4, r6	// MSW = p16 b11 b10 b9 b8 b7 b6 b5
+add r5, r0
+
 mov r0, 7
 csl r0, 2
 mov r1, 2
-add r0, r1	// r0 = 30
-mov r1, 0
-add r1, r7
-add r1, r7	// r1 = 2i
-add r1, r0	// r1 = 2i + 30
-sw r2, r1	// (2i + 30) = LSW
-mov r0, 1
-add r1, r0	// r1 = 2i + 31
-sw r4, r1 	// (2i + 31) = MSW
-mov r1, 7
-csl r1, 1	// r1 = 14
-add r1, r0	// r1 = 15
-bne r7, r1
-jump loop
+add r0, r1  // r0 = 30
+add r0, r7
+add r0, r7  // r0 = 30 + 2i
+sw r5, r0
+mov r1, 1
+add r0, r1  // r0 = 31 + 2i
+sw r6, r0
+add r7, r1
+mov r0, 7
+csl r0, 1
+add r0, r1
+bne r0, r7
+jump loop1_1
 halt
