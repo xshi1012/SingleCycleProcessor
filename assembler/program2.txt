@@ -1,0 +1,207 @@
+mov r7, 0
+loop2_1: mov r0, 1
+csr r0, 2               // r0 = 64
+add r0, r7
+add r0, r7              // r0 = 64 + 2i
+lw r1, r0               // r1 = (64 + 2i)
+mov r2, 1
+add r0, r2              // r0 = 65 + 2i
+lw r2, r0               // r2 = (65 + 21)
+
+mov r0, 0
+add r0, r1 
+mov r3, 0
+mov r4, 0
+mov r5, 0
+mov r6, 0
+csr r0, 3
+xor r3, r0
+xor r4, r0
+csr r0, 2
+xor r3, r0
+xor r5, r0
+csr r0, 1
+xor r4, r0
+xor r5, r0
+csr r0, 1
+xor r3, r0
+xor r4, r0
+xor r5, r0
+mov r0, 0
+add r0, r2
+csr r0, 1
+xor r3, r0
+xor r6, r0
+csr r0, 1
+xor r4, r0
+xor r6, r0
+csr r0, 1
+xor r3, r0
+xor r4, r0
+xor r6, r0
+csr r0, 1
+xor r5, r0
+xor r6, r0
+csr r0, 1
+xor r3, r0
+xor r5, r0
+xor r6, r0
+csr r0, 1
+xor r4, r0
+xor r5, r0
+xor r6, r0
+csr r0, 1
+xor r3, r0
+xor r4, r0
+xor r5, r0
+xor r6, r0
+mov r0, 1
+and r3, r0
+and r4, r0
+and r5, r0
+and r6, r0
+csl r4, 1
+csl r5, 2
+csl r6, 3
+add r6, r5
+add r6, r4
+add r6, r3              // r6 = 0 0 0 0 p8 p4 p2 p1
+mov r5, 0               // r5 = received
+mov r0, 6
+and r0, r1              // r0 = 0 0 0 0 0 p2 p1 0
+csr r0, 1
+add r5, r0              // r5 = 0 0 0 0 0 0 p2 p1
+mov r0, 4
+csl r0, 2
+and r0, r1              // r0 = 0 0 0 p4  0 0 0 0
+csr r0, 2
+add r5, r0              // r5 = 0 0 0 0 0 p4 p2 p1
+mov r0, 1
+and r0, r2              // r0 = 0 0 0 0 0 0 0 p8
+csl r0, 3
+add r5, r0              // r5 = 0 0 0 0 p8 p4 p2 p1
+mov r0, 0
+add r0, r1
+mov r4, 0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+mov r0, 0
+add r0, r2
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0
+csr r0, 1
+xor r4, r0              // r4 = calculated p16
+mov r3, 1
+and r3, r1              // r3 = received p16
+xor r6, r5
+mov r5, 0
+bne r3, r4
+jump 1_bit
+
+mov r3, 0
+bne r3, r6
+jump 2_bit
+
+mov r6, 0
+mov r3, 1
+bne r3, r5
+jump write
+
+2_bit: mov r6, 1
+csr r6, 1
+bne r6, r5
+jump write
+
+1_bit: mov r0, 0
+// r0 r3 r4 r5 free, r6 -> incorrect index
+mov r3, 1
+mov r4, 1
+1_bit_while: bne r0, r6
+jump 1_bit_loop
+
+mov r0, 4
+csl r0, 1
+and r0, r6
+
+bne r0, r5              // if r0 == 0, use lsw
+jump 1_bit_msw
+xor r1, r3              // flip lsw
+mov r6, 0
+bne r4, r5
+jump write
+
+1_bit_msw: xor r2, r3   // flip msw
+mov r6, 0
+bne r4, r5
+jump write
+
+1_bit_loop: csl r3, 1
+add r0, r4
+bne r4, r5
+jump 1_bit_while
+
+write: mov r0, 4        // r0 r3 r4 free
+csl r0, 1
+and r0, r1
+csr r0, 3
+add r5, r0
+mov r0, 7
+csr r0, 3
+and r0, r1
+csr r0, 2
+csr r0, 2
+add r5, r0              // r5 = 0 0 0 0 b4 b3 b2 b1
+mov r0, 7
+csl r0, 1
+mov r3, 1
+add r0, r3
+csl r0, 1
+and r0, r2
+csl r0, 3
+add r5, r0              // r5 = b8 b7 b6 b5 b4 b3 b2 b1
+mov r0, 7
+csr r0, 3
+and r0, r2
+csl r0, 3
+add r6, r0              // r6 = _ 0 0 0 0 b11 b10 b9
+mov r0, 5
+csl r0, 3
+mov r1, 7
+add r0, r1
+csl r0, 1               // r0 = 94
+add r0, r7
+add r0, r7
+sw r5, r0
+mov r1, 1
+add r0, r1
+sw r6, r0
+add r7, r1
+mov r0, 7
+csl r0, 1
+add r0, r1              // r0 = 15
+bne r7, r0
+jump loop2_1
+halt

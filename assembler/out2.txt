@@ -1,0 +1,197 @@
+mov r7 0
+loop2_1: mov r0 1
+csr r0 2
+add r0 r7
+add r0 r7
+lw r1 r0
+mov r2 1
+add r0 r2
+lw r2 r0
+mov r0 0
+add r0 r1 
+mov r3 0
+mov r4 0
+mov r5 0
+mov r6 0
+csr r0 3
+xor r3 r0
+xor r4 r0
+csr r0 2
+xor r3 r0
+xor r5 r0
+csr r0 1
+xor r4 r0
+xor r5 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r5 r0
+mov r0 0
+add r0 r2
+csr r0 1
+xor r3 r0
+xor r6 r0
+csr r0 1
+xor r4 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r6 r0
+csr r0 1
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r4 r0
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r5 r0
+xor r6 r0
+mov r0 1
+and r3 r0
+and r4 r0
+and r5 r0
+and r6 r0
+csl r4 1
+csl r5 2
+csl r6 3
+add r6 r5
+add r6 r4
+add r6 r3
+mov r5 0
+mov r0 6
+and r0 r1
+csr r0 1
+add r5 r0
+mov r0 4
+csl r0 2
+and r0 r1
+csr r0 2
+add r5 r0
+mov r0 1
+and r0 r2
+csl r0 3
+add r5 r0
+mov r0 0
+add r0 r1
+mov r4 0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+mov r0 0
+add r0 r2
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+mov r3 1
+and r3 r1
+xor r6 r5
+mov r5 0
+bne r3 r4
+jump 1_bit
+mov r3 0
+bne r3 r6
+jump 2_bit
+mov r6 0
+mov r3 1
+bne r3 r5
+jump write
+2_bit: mov r6 1
+csr r6 1
+bne r6 r5
+jump write
+1_bit: mov r0 0
+
+mov r3 1
+mov r4 1
+1_bit_while: bne r0 r6
+jump 1_bit_loop
+mov r0 4
+csl r0 1
+and r0 r6
+bne r0 r5
+jump 1_bit_msw
+xor r1 r3
+mov r6 0
+bne r4 r5
+jump write
+1_bit_msw: xor r2 r3
+mov r6 0
+bne r4 r5
+jump write
+1_bit_loop: csl r3 1
+add r0 r4
+bne r4 r5
+jump 1_bit_while
+write: mov r0 4
+csl r0 1
+and r0 r1
+csr r0 3
+add r5 r0
+mov r0 7
+csr r0 3
+and r0 r1
+csr r0 2
+csr r0 2
+add r5 r0
+mov r0 7
+csl r0 1
+mov r3 1
+add r0 r3
+csl r0 1
+and r0 r2
+csl r0 3
+add r5 r0
+mov r0 7
+csr r0 3
+and r0 r2
+csl r0 3
+add r6 r0
+mov r0 5
+csl r0 3
+mov r1 7
+add r0 r1
+csl r0 1
+add r0 r7
+add r0 r7
+sw r5 r0
+mov r1 1
+add r0 r1
+sw r6 r0
+add r7 r1
+mov r0 7
+csl r0 1
+add r0 r1
+bne r7 r0
+jump loop2_1
+halt
