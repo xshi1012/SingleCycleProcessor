@@ -1,16 +1,15 @@
 module ALU(
   input [ 7:0] INPUTA,      	  // data inputs
                INPUTB,
-  input [ 2:0] opcode,				  // ALU opcodecode, part of microcode
+  input [ 2:0] opcode,				  // ALU opcode
   input func,
-  output logic [7:0] ALU_out,		  // or:  output reg [7:0] ALU_out,
+  output logic [7:0] ALU_out,		  // ALU output
   output logic branch_taken,
   output logic branch_skip
     );
 	 
   always_comb begin
-    {branch_skip, branch_taken, ALU_out} = 0;       // default -- reset ALU_out and not branching
-// single instruction for both LSW & MSW
+    {branch_skip, branch_taken, ALU_out} = 0;   // default -- reset ALU_out and not branching
     case(opcode)
       3'b000: begin
         ALU_out = INPUTA + INPUTB;
@@ -88,16 +87,3 @@ module ALU(
     endcase
   end
 endmodule
-
-
-
-	   /*
-			Left shift
-
-            
-			  input a = 10110011   sc_in = 1
-
-              output = 01100111
-			  sc_out =	1
-
-							   */

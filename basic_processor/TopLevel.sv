@@ -1,16 +1,11 @@
-// Create Date:    2018.04.05
-// Design Name:    BasicProcessor
-// Module Name:    TopLevel 
-// CSE141L
-// partial only										   
-module TopLevel(		   // you will have the same 3 ports
+module TopLevel(
   input     start,	   // init/reset, active high
 	input     CLK,		   // clock -- posedge used inside design
   output    halt		   // done flag from DUT
 );
 
-wire [9:0]  PC;            // program count
-wire [8:0]  instruction;   // our 9-bit opcode
+wire [9:0]  PC;            // program counter
+wire [8:0]  instruction;   // our 9-bit instruction
 wire [7:0]  reg_out1, reg_out2;  // reg_file outputs
 wire [7:0]  immediate,	   // Immediate value
             ALU_out,       // ALU resultS

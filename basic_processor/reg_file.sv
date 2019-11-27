@@ -1,9 +1,3 @@
-// Create Date:    2017.01.25
-// Design Name:    CSE141L
-// Module Name:    reg_file 
-//
-// Additional Comments: 					  $clog2
-
 module reg_file #(parameter W=8, D=3)(		 // W = data path width; D = pointer width
   input          CLK,
                  init,
@@ -15,15 +9,14 @@ module reg_file #(parameter W=8, D=3)(		 // W = data path width; D = pointer wid
   output logic [W-1:0] data_outA,
   output logic [W-1:0] data_outB
     );
+ 
+logic [W-1:0] registers[2**D];
 
-// W bits wide [W-1:0] and 2**4 registers deep 	 
-logic [W-1:0] registers[2**D];	  // or just registers[16] if we know D=4 always
-
-// combinational reads w/ blanking of address 0
+// read, combinational
 assign      data_outA = registers[raddrA];
 assign      data_outB = registers[raddrB]; 
 
-// sequential (clocked) writes 
+// write on positive edge of clock
 always_ff @ (posedge CLK)
   if(init) begin
     registers[0] <= 8'b00000000;

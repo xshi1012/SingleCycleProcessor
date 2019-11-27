@@ -16,7 +16,6 @@ module Ctrl (
                jump_en,
                Halt
   );
-// jump on right shift that generates a zero
 always_comb begin
   if (read_jump) begin                   // JR
     opcode = 3'b000;

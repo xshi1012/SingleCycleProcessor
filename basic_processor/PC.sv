@@ -1,11 +1,6 @@
-// CSE141L
-// program counter
-// accepts branch and jump instructions
-// default = increment by 1
-// issues halt when PC reaches 63
 module PC(
   input init,
-        jump_en,		// relative
+        jump_en,		// jump enabled or not
 		    branch_taken,	// whether a branch is taken
 		    branch_skip,	// whether a branch should be skipped 
 		    halt,

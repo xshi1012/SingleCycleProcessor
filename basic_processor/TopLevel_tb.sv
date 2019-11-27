@@ -1,4 +1,4 @@
-module TopLevel_tb;	     // Lab 17
+module TopLevel_tb;
 
 // To DUT Inputs
   bit start;
@@ -39,13 +39,6 @@ logic[  7:0] mat_str[32];  // message string parsed into bytes
 	.CLK             , 
 	.halt             
 	);
-
-//initial begin
- 
-//  #170ns force DUT.branch_en=1'b1;
-//  #10ns  release DUT.branch_en;
-
-//end
 
 initial begin
 // program 1
