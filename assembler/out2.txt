@@ -114,6 +114,7 @@ xor r4 r0
 csr r0 1
 xor r4 r0
 mov r3 1
+and r4 r3
 and r3 r1
 xor r6 r5
 mov r5 0
@@ -131,7 +132,6 @@ csr r6 1
 bne r6 r5
 jump write
 1_bit: mov r0 0
-
 mov r3 1
 mov r4 1
 1_bit_while: bne r0 r6

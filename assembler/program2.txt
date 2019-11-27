@@ -115,6 +115,7 @@ xor r4, r0
 csr r0, 1
 xor r4, r0              // r4 = calculated p16
 mov r3, 1
+and r4, r3
 and r3, r1              // r3 = received p16
 xor r6, r5
 mov r5, 0
@@ -136,7 +137,6 @@ bne r6, r5
 jump write
 
 1_bit: mov r0, 0
-// r0 r3 r4 r5 free, r6 -> incorrect index
 mov r3, 1
 mov r4, 1
 1_bit_while: bne r0, r6
