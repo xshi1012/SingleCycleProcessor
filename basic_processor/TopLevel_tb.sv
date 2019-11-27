@@ -116,7 +116,7 @@ initial begin
 
 
   // generate parity for each message; display result and that of DUT
-/* Program1 check 
+  // Program 1 check 
   $display("start program 1");
   $display();
   for(int i=0;i<15;i++) begin
@@ -134,9 +134,10 @@ initial begin
     end
     $display();
   end
-*/
 
 
+
+  // Program 2 check
   $display();
   $display("start program 2");
   $display();
@@ -160,7 +161,7 @@ initial begin
   end
 
 
-/* Program3 check
+  // Program 3 check
   $display();
   $display("start program 3");
   $display();
@@ -170,7 +171,7 @@ initial begin
   if(cto!=DUT.data_memory.core[193]) $display("**** oops!****");
   $display("cts = %d %d",cts,DUT.data_memory.core[194]);
   if(cts!=DUT.data_memory.core[194]) $display("**** oops!****");
-*/
+
   #30ns $stop;			   
 end
 
