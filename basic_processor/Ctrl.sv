@@ -82,7 +82,7 @@ always_comb begin
         write_mem = 0;
         read_mem = 0;
         jump_en = 0;
-        if(instruction[2:0] == 3'b000) begin
+        if(instruction[5:0] == 6'b000000) begin
           Halt = 1;
         end
         else begin
