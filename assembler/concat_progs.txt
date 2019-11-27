@@ -63,7 +63,6 @@ csl r5, 2
 csl r5, 2
 add r5, r4
 add r5, r3 // r5 = 0 0 0 p4 0 p2 p1 0
-// r0, r3, r4   free
 
 mov r0, 1
 and r0, r1  // b1
@@ -175,8 +174,6 @@ csl r0, 1
 add r0, r1
 bne r0, r7
 jump loop1_1
-
-
 
 mov r7, 0               // program2 starts here
 loop2_1: mov r0, 1

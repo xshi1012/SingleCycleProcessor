@@ -62,7 +62,6 @@ csl r5 2
 csl r5 2
 add r5 r4
 add r5 r3
-
 mov r0 1
 and r0 r1
 csl r0 3
