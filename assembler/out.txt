@@ -1,188 +1,519 @@
-001111000
-001000000
-000000111
-000000111
-011001000
-001010001
-000000010
-011010000
-001000000
-000000001
-001011000
-001100000
-001101000
-001110000
-101011000
-101100000
-010000101
-101011000
-101101000
-010000101
-101100000
-101101000
-010000101
-101011000
-101100000
-101101000
-010000101
-101011000
-101110000
-010000101
-101100000
-101110000
-010000101
-101011000
-101100000
-101110000
-010000101
-101101000
-101110000
-001000000
-000000010
-101011000
-101101000
-101110000
-010000101
-101100000
-101101000
-101110000
-010000101
-101011000
-101100000
-101101000
-101110000
-001000001
-110011000
-110100000
-110101000
-110110000
-010100001
-010101011
-010110011
-010110011
-010110001
-001010000
-000010011
-000010100
-000010101
-000010110
-001000001
-110000001
-010000010
-000010000
-001000010
-110000001
-010000011
-000010000
-001000100
-110000001
-010000011
-000010000
-001000100
-010000001
-110000001
-010000011
-000010000
-001000000
-000000111
-000000111
-001100001
-000000100
-011011000
-001100000
-001000100
-010000010
-110000001
-010000110
-010000110
-000100000
-001000100
-010000011
-110000001
-010000110
-010000110
-000100000
-001000100
-010000010
-010000010
-110000001
-010000110
-010000110
-000100000
-001000100
-010000011
-010000010
-110000001
-010000110
-010000110
-000100000
-001000001
-110000011
-010000010
-010000010
-000100000
-001000010
-110000011
-010000010
-010000010
-000100000
-001000100
-110000011
-010000010
-010000010
-000100000
-001110000
-001000000
-000000010
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-001000000
-000000100
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010000101
-101110000
-010110011
-010110011
-010110001
-000100110
-001000111
-010000010
-001001010
-000000001
-001001000
-000001111
-000001111
-000001000
-100010001
-001000001
-000001000
-100100001
-001001111
-010001001
-000001000
-111111001
-000000001
-010000000
+mov r7 0
+loop1_1: mov r0 0
+add r0 r7
+add r0 r7
+lw r1 r0
+mov r2 1
+add r0 r2
+lw r2 r0
+mov r0 0
+add r0 r1
+mov r3 0
+mov r4 0
+mov r5 0
+mov r6 0
+xor r3 r0
+xor r4 r0
+csr r0 1
+xor r3 r0
+xor r5 r0
+csr r0 1
+xor r4 r0
+xor r5 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r5 r0
+csr r0 1
+xor r3 r0
+xor r6 r0
+csr r0 1
+xor r4 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r6 r0
+csr r0 1
+xor r5 r0
+xor r6 r0
+mov r0 0
+add r0 r2
+xor r3 r0
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r4 r0
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r5 r0
+xor r6 r0
+mov r0 1
+and r3 r0
+and r4 r0
+and r5 r0
+and r6 r0
+csl r3 1
+csl r4 2
+csl r5 2
+csl r5 2
+add r5 r4
+add r5 r3
+
+mov r0 1
+and r0 r1
+csl r0 3
+add r5 r0
+mov r0 2
+and r0 r1
+csl r0 2
+csl r0 2
+add r5 r0
+mov r0 4
+and r0 r1
+csl r0 2
+csl r0 2
+add r5 r0
+mov r0 4
+csl r0 1
+and r0 r1
+csl r0 2
+csl r0 2
+add r5 r0
+mov r0 4
+csl r0 2
+and r0 r1
+csr r0 3
+add r6 r0
+mov r0 4
+csl r0 3
+and r0 r1
+csr r0 3
+add r6 r0
+mov r0 1
+csr r0 2
+and r0 r1
+csr r0 3
+add r6 r0
+mov r0 1
+csr r0 1
+and r0 r1
+csr r0 3
+add r6 r0
+mov r0 1
+and r0 r2
+csr r0 3
+add r6 r0
+mov r0 2
+and r0 r2
+csr r0 3
+add r6 r0
+mov r0 4
+and r0 r2
+csr r0 3
+add r6 r0
+mov r3 0
+mov r0 0
+add r0 r5
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+mov r0 0
+add r0 r6
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+csr r0 1
+xor r3 r0
+mov r0 1
+and r0 r3
+add r5 r0
+mov r0 7
+csl r0 2
+mov r1 2
+add r0 r1
+add r0 r7
+add r0 r7
+sw r5 r0
+mov r1 1
+add r0 r1
+sw r6 r0
+add r7 r1
+mov r0 7
+csl r0 1
+add r0 r1
+bne r0 r7
+jump loop1_1
+mov r7 0
+loop2_1: mov r0 1
+csr r0 2
+add r0 r7
+add r0 r7
+lw r1 r0
+mov r2 1
+add r0 r2
+lw r2 r0
+mov r0 0
+add r0 r1 
+mov r3 0
+mov r4 0
+mov r5 0
+mov r6 0
+csr r0 3
+xor r3 r0
+xor r4 r0
+csr r0 2
+xor r3 r0
+xor r5 r0
+csr r0 1
+xor r4 r0
+xor r5 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r5 r0
+mov r0 0
+add r0 r2
+csr r0 1
+xor r3 r0
+xor r6 r0
+csr r0 1
+xor r4 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r6 r0
+csr r0 1
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r4 r0
+xor r5 r0
+xor r6 r0
+csr r0 1
+xor r3 r0
+xor r4 r0
+xor r5 r0
+xor r6 r0
+mov r0 1
+and r3 r0
+and r4 r0
+and r5 r0
+and r6 r0
+csl r4 1
+csl r5 2
+csl r6 3
+add r6 r5
+add r6 r4
+add r6 r3
+mov r5 0
+mov r0 6
+and r0 r1
+csr r0 1
+add r5 r0
+mov r0 4
+csl r0 2
+and r0 r1
+csr r0 2
+add r5 r0
+mov r0 1
+and r0 r2
+csl r0 3
+add r5 r0
+mov r0 0
+add r0 r1
+mov r4 0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+mov r0 0
+add r0 r2
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+csr r0 1
+xor r4 r0
+mov r3 1
+and r4 r3
+and r3 r1
+xor r6 r5
+mov r5 0
+bne r3 r4
+jump 1_bit
+mov r3 0
+bne r3 r6
+jump 2_bit
+mov r6 0
+mov r3 1
+bne r3 r5
+jump write
+2_bit: mov r6 1
+csr r6 1
+bne r6 r5
+jump write
+1_bit: mov r0 0
+mov r3 1
+mov r4 1
+1_bit_while: bne r0 r6
+jump 1_bit_loop
+mov r0 4
+csl r0 1
+and r0 r6
+bne r0 r5
+jump 1_bit_msw
+xor r1 r3
+mov r6 0
+bne r4 r5
+jump write
+1_bit_msw: xor r2 r3
+mov r6 0
+bne r4 r5
+jump write
+1_bit_loop: csl r3 1
+add r0 r4
+bne r4 r5
+jump 1_bit_while
+write: mov r0 4
+csl r0 1
+and r0 r1
+csr r0 3
+add r5 r0
+mov r0 7
+csr r0 3
+and r0 r1
+csr r0 2
+csr r0 2
+add r5 r0
+mov r0 7
+csl r0 1
+mov r3 1
+add r0 r3
+csl r0 1
+and r0 r2
+csl r0 3
+add r5 r0
+mov r0 7
+csr r0 3
+and r0 r2
+csl r0 3
+add r6 r0
+mov r0 5
+csl r0 3
+mov r1 7
+add r0 r1
+csl r0 1
+add r0 r7
+add r0 r7
+sw r5 r0
+mov r1 1
+add r0 r1
+sw r6 r0
+add r7 r1
+mov r0 7
+csl r0 1
+add r0 r1
+bne r7 r0
+jump loop2_1
+mov r3 1
+csr r3 1
+mov r4 5
+csr r4 3
+lw r2 r4
+mov r5 7
+add r5 r3
+csl r5 1
+add r5 r3
+csl r5 1
+csr r2 3
+and r2 r5
+mov r6 0
+loop3_1_1: lw r1 r3
+mov r7 1
+and r1 r5	
+bne r1 r2
+jump else3_1_1
+add r6 r7
+else3_1_1: lw r1 r3
+csr r1 1	
+and r1 r5
+bne r1 r2
+jump else3_1_2
+add r6 r7
+else3_1_2: lw r1 r3
+csr r1 2
+and r1 r5
+bne r1 r2
+jump else3_1_3
+add r6 r7
+else3_1_3: lw r1 r3
+csr r1 3
+and r1 r5
+bne r1 r2
+jump else3_1_4
+add r6 r7
+else3_1_4: add r3 r7
+bne r3 r4
+jump loop3_1_1
+mov r7 3
+csr r7 2
+sw r6 r7
+mov r3 1
+csr r3 1
+mov r6 0
+mov r7 1
+loop3_2_1: lw r1 r3
+and r1 r5	
+bne r1 r2
+jump else3_2_1
+add r6 r7
+bne r3 r7
+jump end3_2
+else3_2_1: lw r1 r3
+csr r1 1
+and r1 r5	
+bne r1 r2
+jump else3_2_2
+add r6 r7
+bne r3 r7
+jump end3_2
+else3_2_2: lw r1 r3
+csr r1 2
+and r1 r5	
+bne r1 r2
+jump else3_2_3
+add r6 r7
+bne r3 r7
+Jump end3_2
+else3_2_3: lw r1 r3
+csr r1 3
+and r1 r5	
+bne r1 r2
+jump end3_2
+add r6 r7
+end3_2: add r3 r7
+bne r3 r4
+jump loop3_2_1
+mov r7 7
+csr r7 2
+sw r6 r7
+mov r7 3
+csr r7 2
+lw r6 r7
+mov r3 3
+mov r4 7
+csl r4 2
+add r4 r3
+csl r4 3
+mov r3 4
+add r4 r3
+mov r3 1
+csr r3 1
+csr r4 3
+loop3_3_1: mov r7 1
+lw r0 r3
+csl r0 2
+csl r0 2
+mov r1 7
+csl r1 1
+add r1 r7
+csl r1 2
+csl r1 2
+and r0 r1
+csr r1 2
+csr r1 2
+add r3 r7
+lw r7 r3
+csr r7 2
+csr r7 2
+and r1 r7
+add r1 r0
+mov r0 0
+add r0 r1
+and r1 r5
+mov r7 1
+bne r1 r2
+jump else3_3_1
+add r6 r7
+else3_3_1: mov r1 0
+add r1 r0
+csr r1 1
+mov r0 0
+add r0 r1
+and r1 r5
+bne r1 r2
+jump else3_3_2
+add r6 r7
+else3_3_2: mov r1 0
+add r1 r0
+csr r1 1
+mov r0 0
+add r0 r1
+and r1 r5
+bne r1 r2
+jump else3_3_3
+add r6 r7
+else3_3_3: mov r1 0
+add r1 r0
+csr r1 1
+and r1 r5
+bne r1 r2
+jump else3_3_4
+add r6 r7
+else3_3_4: bne r3 r4
+jump loop3_3_1
+mov r7 3
+csr r7 2
+mov r3 2
+add r7 r3
+sw r6 r7
+halt
