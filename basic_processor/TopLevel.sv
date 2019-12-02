@@ -1,7 +1,7 @@
-module TopLevel(
-  input     start,	   // init/reset, active high
-	input     CLK,		   // clock -- posedge used inside design
-  output    halt		   // done flag from DUT
+module prog(
+  input     reset,	   // init/reset, active high
+	input     clk,		   // clock -- posedge used inside design
+  output    ack		   // done flag from DUT
 );
 
 wire [9:0]  PC;            // program counter
@@ -17,7 +17,7 @@ wire [7:0]  regWriteValue, // data in to reg file
 
 logic [2:0] opcode,         // opcode
 			      operand1,       // first operand
-			      operand2,       // second operand 
+			      operand2,       // second operand
 			      reg_write_addr; // the register that the result will be written
 logic 		  func;           // function code
 logic [8:0] jump_addr;      // jump target
@@ -31,21 +31,21 @@ wire		    jump_en,        // jumping
             write_mem,      // whether writing to MEM
             read_mem,       // where reading from MEM
             Halt;           // finished
-  
+
   assign regWriteValue = ALU_write_reg ? ALU_out : mem_out;
   assign data2 = imm_operand2 ? immediate : reg_out2;
-  assign halt = Halt;
 
   PC PC1 (
-    .init     (start),
+    .init     (reset),
     .jump_en,
     .branch_taken,
     .branch_skip,
     .halt     (Halt),
-    .CLK,
+    .clk,
     .jump_addr,
     .read_jump,
-    .PC
+    .PC,
+    .ack
   );
 
   InstROM instruction_rom (
@@ -73,8 +73,8 @@ wire		    jump_en,        // jumping
   );
 
   reg_file #(.W(8), .D(3)) register_file (
-    .CLK,
-    .init     (start),
+    .clk,
+    .init     (reset),
     .write_en (write_to_reg),
     .raddrA   (operand1),
     .raddrB   (operand2),
@@ -94,9 +94,9 @@ wire		    jump_en,        // jumping
     .branch_skip
   );
 
-  data_mem data_memory (
-    .CLK,
-    .reset      (start),
+  data_mem dm1 (
+    .clk,
+    .reset      (reset),
     .DataAddress(reg_out2),
     .ReadMem    (read_mem),
     .WriteMem   (write_mem),

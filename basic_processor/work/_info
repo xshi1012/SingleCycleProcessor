@@ -1,0 +1,222 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Altera/15.0
+vALU
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 !s110 1575321459
+!i10b 1
+!s100 K9Dfk3^`NOK4Kd65`[HP_2
+IM@jK9PAM5DIT8X@R57Szi0
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 ALU_sv_unit
+S1
+Z3 dC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor
+Z4 w1575320047
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/ALU.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/ALU.sv
+L0 1
+Z5 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1575321459.359000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/ALU.sv|
+!i113 1
+Z6 o-work work -sv
+n@a@l@u
+vCtrl
+R0
+R1
+!i10b 1
+!s100 h`@ZjghBa<GzNJjF9HoMh2
+IUaMUNa=<Z40_:UH;[cQO21
+R2
+!s105 Ctrl_sv_unit
+S1
+R3
+R4
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/Ctrl.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/Ctrl.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575321459.437000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/Ctrl.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/Ctrl.sv|
+!i113 1
+R6
+n@ctrl
+vdata_mem
+R0
+R1
+!i10b 1
+!s100 BV6ncdj9X7g:=M=K2cZX`3
+I`DlVmi3QCQbS3^2jmg:<Z2
+R2
+!s105 data_mem_sv_unit
+S1
+R3
+w1575320149
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/data_mem.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/data_mem.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575321459.499000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/data_mem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/data_mem.sv|
+!i113 1
+R6
+vInstROM
+R0
+R1
+!i10b 1
+!s100 SmJ`iQAPNze69`k7WlGFW2
+IYA>fZHV9PkY13zeC4bzfi0
+R2
+!s105 InstROM_sv_unit
+S1
+R3
+R4
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/InstROM.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/InstROM.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575321459.593000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/InstROM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/InstROM.sv|
+!i113 1
+R6
+n@inst@r@o@m
+vPC
+R0
+R1
+!i10b 1
+!s100 U;YB5`QhEX<Gi21SERiWX3
+I[<32V;LeFgzgARVhRc7AI3
+R2
+!s105 PC_sv_unit
+S1
+R3
+w1575321372
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/PC.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/PC.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575321459.671000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/PC.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/PC.sv|
+!i113 1
+R6
+n@p@c
+vprog
+R0
+R1
+!i10b 1
+!s100 iooWk]OXh@j1l:ZJl8bcE3
+I4>F8OgZ4Dhi:`5laCFYz[1
+R2
+Z7 !s105 TopLevel_sv_unit
+S1
+R3
+w1575320911
+Z8 8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/TopLevel.sv
+Z9 FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/TopLevel.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575321459.905000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/TopLevel.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/TopLevel.sv|
+!i113 1
+R6
+vprog123_tb
+R0
+R1
+!i10b 1
+!s100 N[B>R?dXgWU;7T>6Kjz1[1
+IOdf15hLS7B1>[C0VUkDB20
+R2
+!s105 prog123_tb_sv_unit
+S1
+R3
+w1575320806
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/prog123_tb.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/prog123_tb.sv
+L0 3
+R5
+r1
+!s85 0
+31
+!s108 1575321459.749000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/prog123_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/prog123_tb.sv|
+!i113 1
+R6
+vreg_file
+R0
+R1
+!i10b 1
+!s100 aI^:JD<RG3TiVJ:;>T9;`2
+IHWf7h3oP2kz5Ql85U2e;K3
+R2
+!s105 reg_file_sv_unit
+S1
+R3
+w1575320226
+8C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/reg_file.sv
+FC:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/reg_file.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575321459.843000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/reg_file.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/reg_file.sv|
+!i113 1
+R6
+vTopLevel
+R0
+!s110 1575320853
+!i10b 1
+!s100 CUz_57Sf9RhTTcZ6LIdYL1
+IPmHOLeBDo7MmzJ4b<`6k;0
+R2
+R7
+S1
+R3
+w1575320349
+R8
+R9
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1575320853.506000
+!s107 C:/Users/xshi/DESKTOP/2019Fall141L/basic_processor/TopLevel.sv|
+R10
+!i113 1
+R6
+n@top@level
