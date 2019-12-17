@@ -20,6 +20,7 @@ The prcessor uses a 9-bit ISA. 9 instructions, 8 registers are supported.
 | and | 110 | N/A | and rd rs | rd = rd & rs |
 | bne | 111 | N/A | bne rd rs | branch if rd != rs |
 | halt | 010 | 0 | halt | PC will halt |
+
 **Note:** 
 1. *csl* and *csr* are circular shifts
 2. *halt* has the same opcode as shifts, but rd and imm should be 0. (shifting r0 by 0 means halt)
