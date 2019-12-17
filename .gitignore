@@ -8,3 +8,4 @@
 ./basic_processor/work/*
 ./*.DS_Store
 work/
+**/*work/

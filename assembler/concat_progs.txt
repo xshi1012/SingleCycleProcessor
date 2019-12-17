@@ -175,6 +175,8 @@ add r0, r1
 bne r0, r7
 jump loop1_1
 
+halt
+
 mov r7, 0               // program2 starts here
 loop2_1: mov r0, 1
 csr r0, 2               // r0 = 64
@@ -381,6 +383,8 @@ csl r0, 1
 add r0, r1              // r0 = 15
 bne r7, r0
 jump loop2_1
+
+halt
 
 mov r3, 1               // program3 starts here
 csr r3, 1	// r3 = 128

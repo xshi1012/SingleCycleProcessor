@@ -23,11 +23,23 @@ if len(sys.argv) != 3:
 
 input_file = open(sys.argv[2], 'r')
 lines = input_file.read().split('\n')
+lut_file = open('lookup_table.txt', 'w+')
 
 line_count = 0
+label_count = 0
 for line in lines:
     if ":" in line:
-        labels[line.strip().split(":")[0]] = "{0:09b}".format(line_count)
+        labels[line.strip().split(":")[0]] = "{0:09b}".format(label_count)
+        lut_address = "{0:010b}".format(line_count)
+
+        lut_file.write(lut_address + "\n")
+
+        label_count += 1
+        if (label_count >= 64):
+            input_file.close()
+            lut_file.close()
+            print("You have more than 64 labels, which this processor does not support")
+            sys.exit()
     
     line_count += 1
 
@@ -80,3 +92,4 @@ for line in lines:
 
 output_file.close()
 input_file.close()
+lut_file.close()
