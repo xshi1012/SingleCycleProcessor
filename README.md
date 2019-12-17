@@ -22,10 +22,11 @@ The prcessor uses a 9-bit ISA. 10 instructions, 8 registers are supported.
 | halt | 010 | 0 | halt | PC will halt |
 
 **Note:** 
-1. *csl* and *csr* are circular shifts
-2. *halt* has the same opcode as shifts, but rd and imm should be 0. (shifting r0 by 0 means halt)
-3. *bne* does not take in label as operand. Instead, if the branch is taken, the next line will be interpreted as an index (which label it is) into the lookup table which gives the address of the label.
-4. The ISA supports at most 64 labels.
+1. The third bit (from the right) is considered the func bit for shift operations. The max shift amount is 4.
+2. *csl* and *csr* are circular shifts
+3. *halt* has the same opcode as shifts, but rd and imm should be 0. (shifting r0 by 0 means halt)
+4. *bne* does not take in label as operand. Instead, if the branch is taken, the next line will be interpreted as an index (which label it is) into the lookup table which gives the address of the label.
+5. The ISA supports at most 64 labels.
 
 ## Assembler
 The input to the assembler should contain no comments, no empty lines, and no commas. The operands and the operations should be separated by spaces. Label should appear at the same line as the next instruction.
