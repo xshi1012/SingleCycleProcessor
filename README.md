@@ -6,7 +6,7 @@ Authors: [Xiaotian Shi](https://github.com/xshi1012), [Yifeng Zhang](https://git
 This project contains the SystemVerilog code for a simple single cycle data path processor and its assembler, as well as three programs that could be run on this processor (assembly codes of the programs can be found in the assember/ folder). The assembler is written in Python.
 
 ## ISA
-The prcessor uses a 9-bit ISA. 9 instructions, 8 registers are supported.
+The prcessor uses a 9-bit ISA. 10 instructions, 8 registers are supported.
 #### Instructions
 | Instruction | opcode |  func | syntax | result |
 | ----------- |--------|-------|--------|--------|
