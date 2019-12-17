@@ -7,7 +7,7 @@ module Ctrl (
                      reg_write_addr,
   output logic [7:0] immediate,
   output logic func,
-  output logic [8:0] jump_addr,
+  output logic [5:0] lut_index,
   output logic imm_operand2,
                ALU_write_reg,
                write_to_reg,
@@ -24,7 +24,7 @@ always_comb begin
     reg_write_addr = instruction[5:3];
     immediate = 8'b00000000;
     func = instruction[2];
-    jump_addr = instruction;
+    lut_index = instruction[5:0];
     imm_operand2 = 0;
     ALU_write_reg = 0;
     write_to_reg = 0;
@@ -42,7 +42,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000;
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 0;
         ALU_write_reg = 1;
         write_to_reg = 1;
@@ -58,7 +58,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000 + instruction[2:0];
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 1;
         ALU_write_reg = 1;
         write_to_reg = 1;
@@ -74,7 +74,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000 + instruction[1:0];
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 1;
         ALU_write_reg = 1;
         write_to_reg = 1;
@@ -95,7 +95,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000;
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 0;
         ALU_write_reg = 0;
         write_to_reg = 1;
@@ -111,7 +111,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000;
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 0;
         ALU_write_reg = 0;
         write_to_reg = 0;
@@ -127,7 +127,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000;
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 0;
         ALU_write_reg = 1;
         write_to_reg = 1;
@@ -143,7 +143,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000;
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 0;
         ALU_write_reg = 1;
         write_to_reg = 1;
@@ -159,7 +159,7 @@ always_comb begin
         reg_write_addr = instruction[5:3];
         immediate = 8'b00000000;
         func = instruction[2];
-        jump_addr = instruction;
+        lut_index = instruction[5:0];
         imm_operand2 = 0;
         ALU_write_reg = 0;
         write_to_reg = 0;

@@ -1,6 +1,7 @@
 module prog(
   input     reset,	   // init/reset, active high
 	input     clk,		   // clock -- posedge used inside design
+  input     req,
   output    ack		   // done flag from DUT
 );
 
@@ -20,7 +21,8 @@ logic [2:0] opcode,         // opcode
 			      operand2,       // second operand
 			      reg_write_addr; // the register that the result will be written
 logic 		  func;           // function code
-logic [8:0] jump_addr;      // jump target
+logic [9:0] jump_addr;      // jump target
+logic [5:0] lut_index;
 wire		    jump_en,        // jumping
 			      branch_skip,    // is a branch skipped
             branch_taken,   // is a branch taken
@@ -32,6 +34,7 @@ wire		    jump_en,        // jumping
             read_mem,       // where reading from MEM
             Halt;           // finished
 
+  assign ack = Halt;
   assign regWriteValue = ALU_write_reg ? ALU_out : mem_out;
   assign data2 = imm_operand2 ? immediate : reg_out2;
 
@@ -42,10 +45,10 @@ wire		    jump_en,        // jumping
     .branch_skip,
     .halt     (Halt),
     .clk,
+    .req,
     .jump_addr,
     .read_jump,
-    .PC,
-    .ack
+    .PC
   );
 
   InstROM instruction_rom (
@@ -62,7 +65,7 @@ wire		    jump_en,        // jumping
     .reg_write_addr,
     .immediate,
     .func,
-    .jump_addr,
+    .lut_index,
     .imm_operand2,
     .ALU_write_reg,
     .write_to_reg,
@@ -70,6 +73,11 @@ wire		    jump_en,        // jumping
     .read_mem,
     .jump_en,
     .Halt
+  );
+
+  LUT lookup_table (
+    .lut_index,
+    .jump_addr
   );
 
   reg_file #(.W(8), .D(3)) register_file (
